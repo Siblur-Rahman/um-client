@@ -1,16 +1,28 @@
-import React, { createElement } from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Layout, Menu} from 'antd';
+
+import { Layout, Menu, MenuProps} from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-  (icon, index) => ({
-    key: String(index + 1),
-    icon: createElement(icon),
-    label: `nav ${index + 1}`,
-  }),
-);
+const items : MenuProps['items'] = [
+    {
+        key:'1',
+        label:'label'
+    },
+    {
+        key:'2',
+        label:'label',
+        children: [
+            {
+                key:'21',
+                label:'label'
+            },
+            {
+                key:'22',
+                label:'label',
+            }
+        ]
+    }
+]
 
 const MainLayout= () => {
  
@@ -27,7 +39,17 @@ const MainLayout= () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" />
+        
+        <div style={{
+            color:'white',
+            textAlign: 'center',
+            height: '4rem',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
+            <h1>U-Management</h1>
+        </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
       </Sider>
       <Layout>
