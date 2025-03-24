@@ -3,8 +3,6 @@ import App from "../App";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import CreateStudent from "../pages/admin/CreateStudent";
 import { adminRoutes } from "./admin.route";
 
 const router = createBrowserRouter([
